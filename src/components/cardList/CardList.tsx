@@ -1,6 +1,6 @@
 import * as React from 'react';
-import robots from "../data/robots";
-import Card from "./Card";
+import robots from "../../data/robots";
+import Card from "../card/Card";
 import ICardListProps from "./ICardListProps";
 
 const CardList = (props: ICardListProps) => {

@@ -1,4 +1,4 @@
-import ICardProps from "./ICardProps";
+import ICardProps from "../card/ICardProps";
 
 interface ICardListProps {
     robots: ICardProps [];
