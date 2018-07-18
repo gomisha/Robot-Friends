@@ -15,17 +15,22 @@ class App extends React.Component<any, IAppState> {
     }
 
     public render() {
+        // parent knows what values are in search box, so can pass to card list
+        const filteredRobots = this.state.robots.filter(robot => {
+            return robot.name.toLowerCase().includes(this.state.searchfield);
+        });
+
         return(
             <div className="tc">
                 <h1>Robo Friends</h1>
                 <SearchBox searchField= "" searchChange={this.onSearchChange}/>
-                <CardList robots={this.state.robots}/>
+                <CardList robots={filteredRobots}/>
             </div>
         );
     }
 
-    private onSearchChange(event: any):void {
-        console.log(event.target.value);
+    private onSearchChange = (event: any) => {
+        this.setState({searchfield: event.target.value});
     }
 }
 

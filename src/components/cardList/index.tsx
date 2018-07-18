@@ -1,5 +1,4 @@
 import * as React from 'react';
-import robots from "../../data/robots";
 import Card from "../card";
 import ICardListProps from "./ICardListProps";
 
@@ -10,11 +9,11 @@ const CardList = (props: ICardListProps) => {
                 props.robots.map((current, i) => {
                     return (
                         <Card
-                            key={robots[i].id}
-                            id={robots[i].id}
-                            name={robots[i].name}
-                            email={robots[i].email}
-                            username={robots[i].username}
+                            key={props.robots[i].id}
+                            id={props.robots[i].id}
+                            name={props.robots[i].name}
+                            email={props.robots[i].email}
+                            username={props.robots[i].username}
                         />
                     );
                 })
