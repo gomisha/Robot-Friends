@@ -1,6 +1,6 @@
 import * as React from 'react';
 import "tachyons";
-import robots    from "../../data/robots";
+// import robots    from "../../data/robots";
 import CardList  from "../../components/cardList";
 import SearchBox from "../../components/search";
 import IAppState from "./IAppState";
@@ -18,8 +18,12 @@ class App extends React.Component<any, IAppState> {
 
     componentDidMount() {
         console.log("componentDidMount");
-        this.setState({
-            robots: robots
+        fetch("https://jsonplaceholder.typicode.com/users").then(response => {
+            return response.json();
+        }).then(users => {
+            this.setState({
+                robots: users
+            })
         })
     }
 
