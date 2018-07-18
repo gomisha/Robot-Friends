@@ -1,6 +1,7 @@
 import * as React from 'react';
 import "tachyons";
 import CardList  from "../../components/cardList";
+import Scroll from "../../components/scroll";
 import SearchBox from "../../components/search";
 import IAppState from "./IAppState";
 import "./index.css";
@@ -36,7 +37,9 @@ class App extends React.Component<any, IAppState> {
                 <div className="tc">
                     <h1 className="f1">Robo Friends</h1>
                     <SearchBox searchField= "" searchChange={this.onSearchChange}/>
-                    <CardList robots={filteredRobots}/>
+                    <Scroll>
+                        <CardList robots={filteredRobots}/>
+                    </Scroll>
                 </div>
             );
     
