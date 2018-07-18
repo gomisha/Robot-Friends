@@ -8,34 +8,39 @@ import "./index.css";
 class App extends React.Component<any, IAppState> {
     constructor(props: any) {
         super(props);
-        console.log("constructor");
         this.state = {
             robots: [],
             searchfield: ''
         };
     }
 
-    componentDidMount() {
-        console.log("componentDidMount");
+    public componentDidMount() {
         fetch("https://jsonplaceholder.typicode.com/users")
             .then(response => response.json())
             .then(users => this.setState({ robots: users }));
     }
 
     public render() {
-        console.log("render")
         // parent knows what values are in search box, so can pass to card list
         const filteredRobots = this.state.robots.filter(robot => {
             return robot.name.toLowerCase().includes(this.state.searchfield);
         });
 
-        return(
-            <div className="tc">
-                <h1 className="f1">Robo Friends</h1>
-                <SearchBox searchField= "" searchChange={this.onSearchChange}/>
-                <CardList robots={filteredRobots}/>
-            </div>
-        );
+        if(this.state.robots.length === 0) {
+            return (
+                <h1>Loading...</h1>
+            );
+        }
+        else {
+            return(
+                <div className="tc">
+                    <h1 className="f1">Robo Friends</h1>
+                    <SearchBox searchField= "" searchChange={this.onSearchChange}/>
+                    <CardList robots={filteredRobots}/>
+                </div>
+            );
+    
+        }
     }
 
     private onSearchChange = (event: any) => {
