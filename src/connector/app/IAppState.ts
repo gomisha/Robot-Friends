@@ -1,4 +1,4 @@
-import ICardProps from "../card/ICardProps";
+import ICardProps from "../../components/card/ICardProps";
 
 interface IAppState {
     robots: ICardProps [];

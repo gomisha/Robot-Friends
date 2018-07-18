@@ -1,8 +1,8 @@
 import * as React from 'react';
 import "tachyons";
 import robots    from "../../data/robots";
-import CardList  from "../cardList";
-import SearchBox from "../search";
+import CardList  from "../../components/cardList";
+import SearchBox from "../../components/search";
 import IAppState from "./IAppState";
 import "./index.css";
 
