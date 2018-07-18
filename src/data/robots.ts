@@ -1,4 +1,4 @@
-export const robots = [
+const robots = [
     {
         email: 'Sincere@april.biz',
         id: 1,
@@ -60,4 +60,6 @@ export const robots = [
       name: 'Clementina DuBuque',
       username: 'Moriah.Stanton',
     }
-  ];
+];
+
+export default robots;

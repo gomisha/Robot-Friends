@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { robots } from "../data/robots";
+import robots from "../data/robots";
 import Card from "./Card";
 import ICardListProps from "./ICardListProps";
 

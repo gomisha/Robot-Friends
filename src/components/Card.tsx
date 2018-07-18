@@ -1,4 +1,5 @@
 import * as React from 'react';
+import "tachyons";
 import ICardProps from "./ICardProps";
 
 const Card = ({ name, id, email, username}: ICardProps) => {
