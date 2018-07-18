@@ -22,12 +22,14 @@ class App extends React.Component<any, IAppState> {
     }
 
     public render() {
+        const { robots, searchfield} = this.state;
+
         // parent knows what values are in search box, so can pass to card list
-        const filteredRobots = this.state.robots.filter(robot => {
-            return robot.name.toLowerCase().includes(this.state.searchfield);
+        const filteredRobots = robots.filter(robot => {
+            return robot.name.toLowerCase().includes(searchfield);
         });
 
-        if(this.state.robots.length === 0) {
+        if(!robots.length) {
             return (
                 <h1>Loading...</h1>
             );
