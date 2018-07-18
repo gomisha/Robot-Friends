@@ -4,6 +4,7 @@ import robots    from "../../data/robots";
 import CardList  from "../cardList";
 import SearchBox from "../search";
 import IAppState from "./IAppState";
+import "./index.css";
 
 class App extends React.Component<any, IAppState> {
     constructor(props: any) {
@@ -22,7 +23,7 @@ class App extends React.Component<any, IAppState> {
 
         return(
             <div className="tc">
-                <h1>Robo Friends</h1>
+                <h1 className="f1">Robo Friends</h1>
                 <SearchBox searchField= "" searchChange={this.onSearchChange}/>
                 <CardList robots={filteredRobots}/>
             </div>
