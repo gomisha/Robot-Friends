@@ -9,13 +9,22 @@ import "./index.css";
 class App extends React.Component<any, IAppState> {
     constructor(props: any) {
         super(props);
+        console.log("constructor");
         this.state = {
-            robots,
+            robots: [],
             searchfield: ''
         };
     }
 
+    componentDidMount() {
+        console.log("componentDidMount");
+        this.setState({
+            robots: robots
+        })
+    }
+
     public render() {
+        console.log("render")
         // parent knows what values are in search box, so can pass to card list
         const filteredRobots = this.state.robots.filter(robot => {
             return robot.name.toLowerCase().includes(this.state.searchfield);
